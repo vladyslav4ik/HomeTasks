@@ -1,8 +1,11 @@
 package task3;
 
-public class Student extends Human {
+import java.util.StringJoiner;
+
+public class Student extends Human implements CSVConverter{
     private int id;
     private String groupName;
+    private StringJoiner sj;
 
     public Student() {
     }
@@ -33,5 +36,28 @@ public class Student extends Human {
     public String toString() {
         return super.getName() + " " + super.getLastName() + " " +
                 super.getGender() + " " + id + " " + groupName + "\n";
+    }
+
+    @Override
+    public String toCSVString() {
+        sj = new StringJoiner(",");
+        sj.add(super.getName());
+        sj.add(super.getLastName());
+        sj.add(super.getGender());
+        sj.add(String.valueOf(id));
+        sj.add(groupName);
+        return sj.toString();
+    }
+
+    @Override
+    public Student fromCSVString(String str) {
+        Student temp = new Student();
+        String[] data = str.split(",");
+        temp.setName(data[0]);
+        temp.setLastName(data[1]);
+        temp.setGender(data[2]);
+        temp.setId(Integer.parseInt(data[3]));
+        temp.setGroupName(data[4]);
+        return temp;
     }
 }

@@ -3,10 +3,14 @@ package task3;
 import task3.exceptions.GroupOverflowException;
 import task3.exceptions.StudentNotFoundException;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Group {
     private String groupName;
     private Student[] students;
     private int nStudents;
+    private Comparator<Student> comparator; // new field comparator
 
     public Group(String groupName) {
         this.groupName = groupName;
@@ -25,8 +29,21 @@ public class Group {
     public void addStudent(Student student) throws GroupOverflowException {
         if (nStudents == students.length)
             throw new GroupOverflowException("Group is full!");
-        else
-            students[nStudents++] = student;
+        else {
+            students[nStudents] = student;
+            nStudents = nStudents + 1;
+        }
+    }
+
+    // second variant of method for adding students
+    public void addStudent() throws GroupOverflowException {
+        if (nStudents == students.length)
+            throw new GroupOverflowException("Group is full!");
+        else {
+            StudentInput.infoInsertion();
+            students[nStudents] = StudentInput.getStudent();
+            nStudents = nStudents + 1;
+        }
     }
 
     public Student searchStudentByLastName(String lastName) throws StudentNotFoundException {
@@ -43,21 +60,21 @@ public class Group {
     }
 
     public boolean removeStudentByID(int id) {
-        int pos;
-        for (pos = 0; pos < nStudents; pos++)
-            if (students[pos].getId() == id)
+        int j;
+        for (j = 0; j < nStudents; j++)
+            if (id == students[j].getId())
                 break;
 
-        if (pos == nStudents)
+        if (j == nStudents)
             return false;
 
-        for (int i = pos; pos < nStudents - 1; pos++)
+        for (int i = j; i < nStudents - 1; i++)
             students[i] = students[i + 1];
-        nStudents--;
+        nStudents = nStudents - 1;
         return true;
     }
 
-    private void sortStudent() {
+    private void bubbleSortStudent() {
         int in, out;
         for (out = nStudents - 1; out >= 0; out--) {
             for (in = 0; in < out; in++) {
@@ -70,13 +87,26 @@ public class Group {
         }
     }
 
+    // new method for sorting with using comparator
+    private void sortStudentByLastName() {
+        comparator = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getLastName().compareTo(o2.getLastName());
+            }
+        };
+
+        Arrays.sort(students, comparator);
+    }
+
     public int studentAmount() {
         return nStudents;
     }
 
     @Override
     public String toString() {
-        sortStudent();
+        //sortStudent();
+        sortStudentByLastName();
         String result = "Group " + groupName + ":\n";
         for (int i = 0; i < nStudents; i++) {
             result = result + (i + 1) + ". " + students[i].toString();

@@ -14,8 +14,13 @@ public class Task3Test {
         Student s6 = new Student("Dima", "Di", "man", 6, "122-19-4");
         Student s7 = new Student("James", "Jam", "man", 7, "122-19-4");
         Student s8 = new Student("Yulis", "Yu", "woman", 8, "122-19-4");
-        Student s9 = new Student("Alex", "Al", "man", 9, "122-19-4");
-        Student s10 = new Student("Galyna", "Gal", "woman", 10, "122-19-4");
+        //Student s9 = new Student("Alex", "Al", "man", 9, "122-19-4");
+        //Student s10 = new Student("Galyna", "Gal", "woman", 10, "122-19-4");
+//        StudentInput.infoInsertion();
+//        Student s10 = StudentInput.getStudent();
+        String st1 = s1.toCSVString();
+        System.out.println(st1);
+        Student s9 = s1.fromCSVString(st1);
 
         try {
             g122_19_4.addStudent(s1);
@@ -27,7 +32,7 @@ public class Task3Test {
             g122_19_4.addStudent(s7);
             g122_19_4.addStudent(s8);
             g122_19_4.addStudent(s9);
-            g122_19_4.addStudent(s10);
+            g122_19_4.addStudent();
             //g122_19_4.addStudent(s1); //will throw exception (group is full, n students = 11)
         } catch (GroupOverflowException e) {
             e.printStackTrace();
@@ -36,7 +41,7 @@ public class Task3Test {
         System.out.println(g122_19_4.studentAmount());
         try {
             System.out.println(g122_19_4.searchStudentByLastName("Pet"));
-            //System.out.println(g122_19_4.searchStudentByLastName("het")); will throw an exception
+           // System.out.println(g122_19_4.searchStudentByLastName("het")); //will throw an exception
         } catch (StudentNotFoundException e) {
             e.printStackTrace();
         }

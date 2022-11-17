@@ -15,3 +15,13 @@ H
 src/task2/Task2Test.java,6\8\68d4115faf96304480e5ce3160dbb4c0b73d4bae
 H
 src/task2/TextSaver.java,d\2\d209d328afae1cecdfa9d24607ed77037327d19b
+H
+src/task1/Task1Test.java,8\7\87eaeae63a50cbb15d631d67ef4ad64ada673ef4
+>
+Home_tasks.iml,b\c\bca88a61f4346481b60a13e28fd75fe48bf6e120
+`
+0src/task3/exceptions/GroupOverflowException.java,f\a\fac65674fb24485da55290be2f4759c136111b6d
+b
+2src/task3/exceptions/StudentNotFoundException.java,2\2\226941edc0a959560ab29f71acb04a8dbd70b356
+K
+src/task3/enums/Gender.java,d\5\d561c3fb65e37d27b518fb190a737f6b98fe9f21
