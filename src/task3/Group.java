@@ -5,12 +5,13 @@ import task3.exceptions.StudentNotFoundException;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.io.*;
 
 public class Group {
     private String groupName;
     private Student[] students;
     private int nStudents;
-    private Comparator<Student> comparator; // new field comparator
+    private Comparator<Student> comparator;
 
     public Group(String groupName) {
         this.groupName = groupName;
@@ -35,7 +36,6 @@ public class Group {
         }
     }
 
-    // second variant of method for adding students
     public void addStudent() throws GroupOverflowException {
         if (nStudents == students.length)
             throw new GroupOverflowException("Group is full!");
@@ -87,7 +87,6 @@ public class Group {
         }
     }
 
-    // new method for sorting with using comparator
     private void sortStudentByLastName() {
         comparator = new Comparator<Student>() {
             @Override
@@ -95,7 +94,6 @@ public class Group {
                 return o1.getLastName().compareTo(o2.getLastName());
             }
         };
-
         Arrays.sort(students, comparator);
     }
 
@@ -103,9 +101,39 @@ public class Group {
         return nStudents;
     }
 
+    // new method for writing data about students to file
+    public void studentsToFile(File outputFile) {
+        int i;
+        try (FileOutputStream out = new FileOutputStream(outputFile)) {
+            for (Student s : students) {
+                byte[] temp = s.toString().getBytes();
+                out.write(temp);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File wasn't found!");
+        } catch (IOException e) {
+            System.out.println("Something went wrong!");
+        }
+    }
+
+    // new method for reading data about students from file
+    public void studentsFromFile(File inputFile) {
+        int i;
+        try (FileInputStream in = new FileInputStream(inputFile)) {
+            do {
+                i = in.read();
+                if (i != - 1)
+                    System.out.print((char) i);
+            } while (i != -1);
+        } catch (FileNotFoundException e) {
+            System.out.println("File wasn't found!");
+        } catch (IOException e) {
+            System.out.println("Something went wrong!");
+        }
+    }
+
     @Override
     public String toString() {
-        //sortStudent();
         sortStudentByLastName();
         String result = "Group " + groupName + ":\n";
         for (int i = 0; i < nStudents; i++) {
