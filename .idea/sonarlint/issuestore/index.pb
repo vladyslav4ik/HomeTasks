@@ -23,3 +23,9 @@ b
 2src/task3/exceptions/StudentNotFoundException.java,2\2\226941edc0a959560ab29f71acb04a8dbd70b356
 K
 src/task3/CSVConverter.java,8\1\814800731acab52f8747df55b41b3b4a8781757d
+I
+src/task4/FileCopier.java,1\0\10406e36789335d41ac82c2d8a339d34171a7fd5
+L
+src/task4/FileExtension.java,9\5\9583a3dee694bf7091cbe34cbb7afe819f809ed5
+H
+src/task4/Task4Test.java,1\6\1623bddaf1132fbaa79d810abf8f729f999c58c3
