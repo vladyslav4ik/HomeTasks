@@ -8,10 +8,6 @@ public class Task5Test {
         UniqueWordsInFiles wordsInFiles = new UniqueWordsInFiles();
         File firstFile = new File("");
         File secondFile = new File("");
-        try {
-            wordsInFiles.getUniqueWords(firstFile, secondFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        wordsInFiles.getUniqueWords(firstFile, secondFile);
     }
 }
