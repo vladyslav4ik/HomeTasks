@@ -1,6 +1,7 @@
 package task4;
 
 import java.io.*;
+import java.nio.file.NotDirectoryException;
 
 public class FileCopier {
     private FileExtension ext;
@@ -11,6 +12,8 @@ public class FileCopier {
 
     public void copyFiles(String extension, File from, File to) throws IOException {
         ext = new FileExtension(extension);
+        if (!from.isDirectory() || !to.isDirectory())
+            throw new NotDirectoryException("Inputted files aren't folders!");
         File[] files = from.listFiles(ext);
         int c;
 

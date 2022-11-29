@@ -23,8 +23,6 @@ b
 2src/task3/exceptions/StudentNotFoundException.java,2\2\226941edc0a959560ab29f71acb04a8dbd70b356
 K
 src/task3/CSVConverter.java,8\1\814800731acab52f8747df55b41b3b4a8781757d
-L
-src/task4/FileExtension.java,9\5\9583a3dee694bf7091cbe34cbb7afe819f809ed5
 =
 textSaver.txt,e\9\e970150d748a76e4d256cdf80f6f0efaef7c12db
 A
