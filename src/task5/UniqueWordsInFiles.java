@@ -8,25 +8,19 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class UniqueWordsInFiles {
-    public void getUniqueWords(File firstFile, File secondFile) {
+    public void getUniqueWords(File firstFile, File secondFile) throws IOException {
         Set<String> first = transformArrayToSet(transformFileToArray(firstFile));
         Set<String> second = transformArrayToSet(transformFileToArray(secondFile));
         String result = checkUniqueness(first, second);
-        try (FileOutputStream out = new FileOutputStream("unique_words.txt")) {
-            out.write(result.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileOutputStream out = new FileOutputStream("unique_words.txt");
+        out.write(result.getBytes());
     }
 
-    private String[] transformFileToArray(File file) {
+    private String[] transformFileToArray(File file) throws IOException {
         String temp = "";
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNext())
-                temp = temp + scanner.nextLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNext())
+            temp = temp + scanner.nextLine();
         return temp.toLowerCase().split("\\W");
     }
 
