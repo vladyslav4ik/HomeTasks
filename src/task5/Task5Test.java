@@ -1,7 +1,6 @@
 package task5;
 
 import java.io.File;
-import java.io.IOException;
 
 public class Task5Test {
     public static void main(String[] args) {

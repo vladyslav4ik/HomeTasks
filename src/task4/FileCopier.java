@@ -1,26 +1,34 @@
 package task4;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.io.*;
 
 public class FileCopier {
     private FileExtension ext;
+    private FileInputStream fileIn;
+    private FileOutputStream fileOut;
+    private BufferedInputStream bufIn;
+    private BufferedOutputStream bufOut;
 
     public void copyFiles(String extension, File from, File to) throws IOException {
         ext = new FileExtension(extension);
         File[] files = from.listFiles(ext);
+        int c;
 
         for (File f : files) {
-            Files.copy(f.toPath(), createPath(f, to), StandardCopyOption.REPLACE_EXISTING);
+            fileIn = new FileInputStream(f);
+            fileOut = new FileOutputStream(createPath(f, to));
+
+            bufIn = new BufferedInputStream(fileIn, 1024);
+            bufOut = new BufferedOutputStream(fileOut, 1024);
+
+            while ((c = bufIn.read()) != -1) {
+                bufOut.write(c);
+                bufOut.flush();
+            }
         }
     }
 
-    private Path createPath(File file, File dest) {
-        String result = dest.getAbsolutePath() + "\\" + file.getName();
-        return Paths.get(result);
+    private String createPath(File file, File dest) {
+        return dest.getAbsolutePath() + "\\" + file.getName();
     }
 }

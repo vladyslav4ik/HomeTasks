@@ -10,7 +10,7 @@ public class Task4Test {
         File to = new File("E:\\Users\\Пользователь\\Desktop\\to");
 
         try {
-            copier.copyFiles("mpp", from, to);
+            copier.copyFiles("txt", from, to);
         } catch (IOException e) {
             e.printStackTrace();
         }
