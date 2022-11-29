@@ -5,8 +5,6 @@ import java.nio.file.NotDirectoryException;
 
 public class FileCopier {
     private FileExtension ext;
-    private FileInputStream fileIn;
-    private FileOutputStream fileOut;
     private BufferedInputStream bufIn;
     private BufferedOutputStream bufOut;
 
@@ -18,11 +16,8 @@ public class FileCopier {
         int c;
 
         for (File f : files) {
-            fileIn = new FileInputStream(f);
-            fileOut = new FileOutputStream(createPath(f, to));
-
-            bufIn = new BufferedInputStream(fileIn, 1024);
-            bufOut = new BufferedOutputStream(fileOut, 1024);
+            bufIn = new BufferedInputStream(new FileInputStream(f), 1024);
+            bufOut = new BufferedOutputStream(new FileOutputStream(createPath(f, to)), 1024);
 
             while ((c = bufIn.read()) != -1) {
                 bufOut.write(c);
