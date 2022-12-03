@@ -1,0 +1,19 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³„şJ
+m
+java:S1450"RRemove the "ext" field and declare it as a local variable in the relevant methods.(‘ñøûÿÿÿÿ
+<
+java:S1481"&Remove this unused "c" local variable.(»ç»“
+Q	java:S125"<This block of commented-out lines of code should be removed.(®—Î
+A
+java:S1481"&Remove this unused "f" local variable.(°àİ€úÿÿÿÿ
+C	java:S108")Either remove or fill this block of code.(°àİ€úÿÿÿÿ
+X
+java:S1128"BRemove this unused import 'java.nio.channels.SeekableByteChannel'.(çğª‰
+?
+java:S1068	")Remove this unused "bufIn" private field.(ğ®Ù¶
+@
+java:S1068
+"*Remove this unused "bufOut" private field.(ÿ¦şŞ
+J
+java:S1144""/Remove this unused private "createPath" method.(°­ûœøÿÿÿÿ
