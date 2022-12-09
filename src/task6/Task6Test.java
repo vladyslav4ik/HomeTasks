@@ -4,7 +4,7 @@ public class Task6Test {
     public static void main(String[] args) {
         try {
             for (int i = 1; i < 101; i++) {
-                new NewThread(String.valueOf(i));
+                new Thread(new NewThread(), String.valueOf(i)).start();
                 Thread.sleep(100);
             }
         } catch (InterruptedException e) {

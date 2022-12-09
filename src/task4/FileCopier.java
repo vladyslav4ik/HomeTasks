@@ -1,7 +1,6 @@
 package task4;
 
 import java.io.*;
-import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NotDirectoryException;
 
 public class FileCopier {
@@ -16,19 +15,19 @@ public class FileCopier {
         File[] files = from.listFiles(ext);
         int c;
 
-//        for (File f : files) {
-//            bufIn = new BufferedInputStream(new FileInputStream(f), 1024);
-//            bufOut = new BufferedOutputStream(new FileOutputStream(createPath(f, to)), 1024);
-//
-//            while ((c = bufIn.read()) != -1) {
-//                bufOut.write(c);
-//                bufOut.flush();
-//            }
-//        }
-
         for (File f : files) {
+            bufIn = new BufferedInputStream(new FileInputStream(f), 1024);
+            bufOut = new BufferedOutputStream(new FileOutputStream(createPath(f, to)), 1024);
 
+            while ((c = bufIn.read()) != -1) {
+                bufOut.write(c);
+                bufOut.flush();
+            }
         }
+
+//        for (File f : files) {
+//
+//        }
     }
 
     private String createPath(File file, File dest) {

@@ -31,5 +31,3 @@ A
 unique_words.txt,c\f\cfc9ebec8f0b440f2b90a42a0f0db9b0b6e5d6d2
 H
 src/task4/Task4Test.java,1\6\1623bddaf1132fbaa79d810abf8f729f999c58c3
-I
-src/task4/FileCopier.java,1\0\10406e36789335d41ac82c2d8a339d34171a7fd5
