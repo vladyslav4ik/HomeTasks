@@ -25,9 +25,21 @@ K
 src/task3/CSVConverter.java,8\1\814800731acab52f8747df55b41b3b4a8781757d
 =
 textSaver.txt,e\9\e970150d748a76e4d256cdf80f6f0efaef7c12db
-A
-students_info.txt,e\6\e6d567af510fec92dea4a7eff12f5940ea823885
 @
 unique_words.txt,c\f\cfc9ebec8f0b440f2b90a42a0f0db9b0b6e5d6d2
 H
 src/task4/Task4Test.java,1\6\1623bddaf1132fbaa79d810abf8f729f999c58c3
+C
+src/task8/Ship.java,3\6\360e1b0fc0053313d5edf4ceca14e900f2208716
+J
+src/task10/FileFinder.java,8\0\80cf1935eb79a003632b75fe251466e1d57ec3f6
+J
+src/task10/Task10Test.java,9\2\9223df4b0cb5f61263ae0312d8b4175197b7029d
+I
+src/task9/FileCopier.java,7\1\71f5a25630b1b973f3313636f3ec89cb6d7ceb80
+J
+src/task10/FileThread.java,0\3\035d0762e9e82c816cd8b8c69285fd5b7b84b0b9
+C
+src/task8/Dock.java,f\2\f2cb3957c47ba8473d855e1ed93f9ec9bd78913b
+H
+src/task8/Task8Test.java,c\e\cea957a4db77a3e8e006f218b5af187cba524a9c
