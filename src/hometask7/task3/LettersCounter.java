@@ -14,6 +14,7 @@ public class LettersCounter {
 
     public void countLetters(File file) {
         int ch;
+        clearMap();
         try (FileReader reader = new FileReader(file)) {
             while ((ch = reader.read()) != -1) {
                 if (!map.containsKey((char) ch))
@@ -28,7 +29,7 @@ public class LettersCounter {
         displayMap();
     }
 
-    public void clearMap() {
+    private void clearMap() {
         map.clear();
     }
 
