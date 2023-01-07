@@ -1,6 +1,0 @@
-
-k
-java:S2095"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ã¢¾€8ÎıŞÅ0
-E
-java:S1068"(Remove this unused "file" private field.(ïÛú8ÏË£ŞÅ0
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•ñ´ßùÿÿÿÿ

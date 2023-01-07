@@ -1,0 +1,12 @@
+
+2
+java:S1643"Use a StringBuilder instead.(Ğ±æ
+7
+java:S1643'"Use a StringBuilder instead.(Ğ±ìÊşÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÀşÒ–úÿÿÿÿ
+i
+java:S2095"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ô§ø”ÿÿÿÿÿ
+`
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(Èñ¾„ıÿÿÿÿ
+o
+java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(ˆìŸ

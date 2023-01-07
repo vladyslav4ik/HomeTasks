@@ -1,0 +1,13 @@
+
+\
+java:S1192"FDefine a constant instead of duplicating this literal "woman" 6 times.(ºó¶ş
+`
+java:S1192
+"JDefine a constant instead of duplicating this literal "122-19-4" 11 times.(™¨Å­
+f	java:S117
+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™¨Å­
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ü›ş×ûÿÿÿÿ
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(Ì´ü÷úÿÿÿÿ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(ÖØÁ
+N	java:S106."9Replace this use of System.out or System.err by a logger.(Ç’­ë
+Q	java:S1251"<This block of commented-out lines of code should be removed.(ó«şˆ
